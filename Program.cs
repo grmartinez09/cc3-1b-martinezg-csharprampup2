@@ -1,6 +1,9 @@
-﻿namespace cc3_1b_martinezg_csharprampup2
+﻿using System;
+using System.Collections.Generic;
+
+namespace Program
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -82,6 +85,96 @@
                 " but the wind was her guardian. The archon " + chNames[3] + " has come to her rescue together with his assistant, " + chNames[chNames.Length - 1] + ". While " + chNames[chNames.Length - 1] + ", as a double " + abilities[1] + ", help buy time for " + chNames[0] +
                 " to escape, " + chNames[3] + " told her that her brother was in another world called " + worldNames[1] + " where Avengers exists. And with that, " + chNames[0] +
                 " has gathered her strength to leap to another world and find her brother. That's how she ended up on our world with no weapons, abilities and just a laptop to study computer science while looking for her brother. The end.");
+            Console.WriteLine("=========================================");
+            // Right triangle
+            Console.WriteLine("Right Triangle Number Pyramid");
+            Console.Write("Enter a number: ");
+            int n = int.Parse(Console.ReadLine());
+
+            // Check if input is valid
+            if (n <= 0)
+            {
+                Console.WriteLine("Invalid input. Please enter a positive integer.");
+            }
+            else
+            {
+                // Print the number pattern
+                for (int i = 1; i <= n; i++)
+                {
+                    for (int y = 1; y <= i; y++)
+                    {
+                        Console.Write(y + " ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+
+            Console.WriteLine("=========================================");
+            // Summation
+            Console.WriteLine("Summation");
+            // Assigning variables
+            Console.Write("Input: ");
+            int input_num = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            int[] formula_list = new int[input_num];
+
+            // Formula
+            int index = 0;
+            while (index < input_num)
+            {
+                for (int i = 1; i <= input_num; i++)
+                {
+                    formula_list[index] = i;
+                    index++;
+                    if (index >= input_num)
+                    {
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine("Formula: " + string.Join("+", formula_list));
+
+            // Summation
+            for (int i = 1; i <= input_num; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine("Summation: " + sum);
+
+            Console.WriteLine("=========================================");
+            // Inverse Triangle
+            Console.WriteLine("Inverse Right Triangle Number Pyramid");
+
+            int num_i_tri = 0;
+            while (num_i_tri <= 0)
+            {
+                Console.Write("Input: ");
+                string input_it = Console.ReadLine();
+                if (int.TryParse(input_it, out int value_it))
+                {
+                    if (value_it <= 0)
+                    {
+                        Console.WriteLine("Invalid input.");
+                    }
+                    else
+                    {
+                        num_i_tri = value_it;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+            }
+            for (int i = num_i_tri; i >= 1; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine("");
+            }
         }
     }
 }
