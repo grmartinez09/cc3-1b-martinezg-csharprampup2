@@ -1,77 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Program
+namespace Program //how accessible is the program
 {
-    class Program
+    class Program //where program is created
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //declaration of "Main" program
         {
             // Weight Conversion
             Console.Write("What is your weight in lbs: ");
-            int weight_lbs = Convert.ToInt32(Console.ReadLine());
-            double kg = weight_lbs / 2.205;
-            kg = Math.Round(kg, 2);
+            int weight_lbs = Convert.ToInt32(Console.ReadLine()); //32 bit-signed int input
+            double kg = weight_lbs / 2.205; //precise decimals
+            kg = Math.Round(kg, 2); //rounded to (2) decimal
 
-            string lbs = weight_lbs.ToString();
+            string lbs = weight_lbs.ToString(); //re-assigning values
             string kgStr = kg.ToString();
 
-            Console.WriteLine("Weight in Pounds (lbs): " + lbs);
+            Console.WriteLine("Weight in Pounds (lbs): " + lbs); //printing result
             Console.WriteLine("Weight in Kilograms (kg): " + kgStr);
             Console.WriteLine("=========================================");
 
             // Length Conversion
             Console.Write("Give me a distance in Miles (mi): ");
-            double len_mi = Convert.ToDouble(Console.ReadLine());
+            double len_mi = Convert.ToDouble(Console.ReadLine()); //can accept input with decimals
             double km = len_mi * 1.609;
             km = Math.Round(km, 2);
 
-            string mi = len_mi.ToString();
+            string mi = len_mi.ToString(); //re-assigning values
             string kmStr = km.ToString();
 
-            Console.WriteLine("Length in Miles (mi): " + mi);
+            Console.WriteLine("Length in Miles (mi): " + mi); //printing result
             Console.WriteLine("Length converted to Kilometers (km): " + kmStr);
             Console.WriteLine("=========================================");
 
             // Temperature Conversion
-            Console.Write("What's the temperature in fahrenheit: ");
+            Console.Write("What's the temperature in fahrenheit: ");  //32 bit-signed int input
             int fahrenheit = Convert.ToInt32(Console.ReadLine());
             double celsius = (5.0 / 9.0) * (fahrenheit - 32);
             celsius = Math.Round(celsius, 2);
 
-            string frt = fahrenheit.ToString();
+            string frt = fahrenheit.ToString(); //re-assigning values
             string cls = celsius.ToString();
 
-            Console.WriteLine("Temperature in Fahrenheit (°f): " + frt);
+            Console.WriteLine("Temperature in Fahrenheit (°f): " + frt);//printing result
             Console.WriteLine("Temperature converted to Celsius (°C): " + cls);
             Console.WriteLine("=========================================");
 
             // Average Age Calculation
-            List<int> studentAgeList = new List<int>();
+            List<int> studentAgeList = new List<int>(); //creating a list
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++) 
             {
-                Console.Write($"Age of student {i}: ");
-                int age = Convert.ToInt32(Console.ReadLine());
-                studentAgeList.Add(age);
+                Console.Write($"Age of student {i}: "); //{i} == Age of student 1:, 2:, 3:, etc.
+                int age = Convert.ToInt32(Console.ReadLine()); //age input
+                studentAgeList.Add(age); //will add all input in studentAgeList until i = 10
             }
 
-            Console.WriteLine(string.Join(", ", studentAgeList));
+            Console.WriteLine(string.Join(", ", studentAgeList)); // concatenate list (,)
 
             int studentAgeSum = 0;
-            foreach (int age in studentAgeList)
+            foreach (int age in studentAgeList) //calculating sum of all input
             {
-                studentAgeSum += age;
+                studentAgeSum += age; 
             }
 
-            double average = studentAgeSum / 10.0;
-            string ave = average.ToString();
+            double average = studentAgeSum / 10.0; //formula for average
+            string ave = average.ToString(); //re-assigning value
 
-            Console.WriteLine("The average age of the student is: " + ave);
+            Console.WriteLine("The average age of the student is: " + ave); //print output
             Console.WriteLine("=========================================");
 
             // Story
-            string[] chNames = { "Lumaine", "Scara", "Raiden", "Barbatos", "Kaedehara" };
+            string[] chNames = { "Lumine", "Scara", "Raiden", "Barbatos", "Kaedehara" }; //array
             string[] worldNames = { "Teyvat", "Earth-918" };
             string[] weaponNames = { "Skyward", "Widsith", "The Catch" };
             string[] abilities = { "elemental resonance", "vision holder", "elemental reaction" };
@@ -86,9 +86,10 @@ namespace Program
                 " to escape, " + chNames[3] + " told her that her brother was in another world called " + worldNames[1] + " where Avengers exists. And with that, " + chNames[0] +
                 " has gathered her strength to leap to another world and find her brother. That's how she ended up on our world with no weapons, abilities and just a laptop to study computer science while looking for her brother. The end.");
             Console.WriteLine("=========================================");
+            
             // Right triangle
-            Console.WriteLine("Right Triangle Number Pyramid");
-            Console.Write("Enter a number: ");
+            Console.WriteLine("Right Triangle Number Pyramid"); 
+            Console.Write("Enter a number: "); //input
             int n = int.Parse(Console.ReadLine());
 
             // Check if input is valid
@@ -99,11 +100,11 @@ namespace Program
             else
             {
                 // Print the number pattern
-                for (int i = 1; i <= n; i++)
+                for (int i = 1; i <= n; i++) //x (columns)
                 {
-                    for (int y = 1; y <= i; y++)
+                    for (int y = 1; y <= i; y++) //y (rows)
                     {
-                        Console.Write(y + " ");
+                        Console.Write(y + " "); //write a right triangle until input number
                     }
                     Console.WriteLine();
                 }
@@ -114,39 +115,39 @@ namespace Program
             Console.WriteLine("Summation");
             // Assigning variables
             Console.Write("Input: ");
-            int input_num = Convert.ToInt32(Console.ReadLine());
+            int input_num = Convert.ToInt32(Console.ReadLine()); //input
             int sum = 0;
             int[] formula_list = new int[input_num];
 
-            // Formula
+            // Formula of summation
             int index = 0;
-            while (index < input_num)
+            while (index < input_num) // if 9: index should be lower than 9
             {
-                for (int i = 1; i <= input_num; i++)
+                for (int i = 1; i <= input_num; i++) // starts at 1, increment to input#
                 {
-                    formula_list[index] = i;
+                    formula_list[index] = i; //adding all index
                     index++;
-                    if (index >= input_num)
+                    if (index >= input_num) // if 9 >= 9 it will stop
                     {
                         break;
                     }
                 }
             }
-            Console.WriteLine("Formula: " + string.Join("+", formula_list));
+            Console.WriteLine("Formula: " + string.Join("+", formula_list)); // will print formula
 
-            // Summation
+            // Summation formula
             for (int i = 1; i <= input_num; i++)
             {
                 sum += i;
             }
-            Console.WriteLine("Summation: " + sum);
+            Console.WriteLine("Summation: " + sum); //print output
 
             Console.WriteLine("=========================================");
             // Inverse Triangle
             Console.WriteLine("Inverse Right Triangle Number Pyramid");
 
             int num_i_tri = 0;
-            while (num_i_tri <= 0)
+            while (num_i_tri <= 0) //input should be more than 0
             {
                 Console.Write("Input: ");
                 string input_it = Console.ReadLine();
@@ -158,18 +159,18 @@ namespace Program
                     }
                     else
                     {
-                        num_i_tri = value_it;
+                        num_i_tri = value_it; // if 9 = 9 stop
                         break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input.");
+                    Console.WriteLine("Invalid input."); //for invalid input (negative int)
                 }
             }
-            for (int i = num_i_tri; i >= 1; i--)
+            for (int k = num_i_tri; k >= 1; k--) //decrements columns
             {
-                for (int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++) // increments rows
                 {
                     Console.Write(j + " ");
                 }
