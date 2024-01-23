@@ -13,11 +13,8 @@ namespace Program //package
             double kg = weight_lbs / 2.205;
             kg = Math.Round(kg, 2);
 
-            string lbs = weight_lbs.ToString();
-            string kgStr = kg.ToString();
-
-            Console.WriteLine("Weight in Pounds (lbs): " + lbs);
-            Console.WriteLine("Weight in Kilograms (kg): " + kgStr);
+            Console.WriteLine("Weight in Pounds (lbs): " + weight_lbs);
+            Console.WriteLine("Weight in Kilograms (kg): " + kg);
             Console.WriteLine("=========================================");
 
             // Length Conversion
@@ -26,11 +23,8 @@ namespace Program //package
             double km = len_mi * 1.609;
             km = Math.Round(km, 2);
 
-            string mi = len_mi.ToString();
-            string kmStr = km.ToString();
-
-            Console.WriteLine("Length in Miles (mi): " + mi);
-            Console.WriteLine("Length converted to Kilometers (km): " + kmStr);
+            Console.WriteLine("Length in Miles (mi): " + len_mi);
+            Console.WriteLine("Length converted to Kilometers (km): " + km);
             Console.WriteLine("=========================================");
 
             // Temperature Conversion
@@ -39,11 +33,8 @@ namespace Program //package
             double celsius = (5.0 / 9.0) * (fahrenheit - 32);
             celsius = Math.Round(celsius, 2);
 
-            string frt = fahrenheit.ToString();
-            string cls = celsius.ToString();
-
-            Console.WriteLine("Temperature in Fahrenheit (°f): " + frt);
-            Console.WriteLine("Temperature converted to Celsius (°C): " + cls);
+            Console.WriteLine("Temperature in Fahrenheit (°f): " + fahrenheit);
+            Console.WriteLine("Temperature converted to Celsius (°C): " + celsius);
             Console.WriteLine("=========================================");
 
             // Average Age Calculation
