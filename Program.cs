@@ -8,18 +8,18 @@ namespace Program //package
         static void Main(string[] args)
         {
             // Weight Conversion
-            Console.Write("What is your weight in lbs: ");
-            int weight_lbs = Convert.ToInt32(Console.ReadLine());
-            double kg = weight_lbs / 2.205;
+            Console.Write("What is your weight in lbs: "); // input
+            int weight_lbs = Convert.ToInt32(Console.ReadLine()); //str to int
+            double kg = weight_lbs / 2.205; //formula
             kg = Math.Round(kg, 2);
 
-            Console.WriteLine("Weight in Pounds (lbs): " + weight_lbs);
+            Console.WriteLine("Weight in Pounds (lbs): " + weight_lbs); //printing input, output
             Console.WriteLine("Weight in Kilograms (kg): " + kg);
             Console.WriteLine("=========================================");
 
             // Length Conversion
             Console.Write("Give me a distance in Miles (mi): ");
-            double len_mi = Convert.ToDouble(Console.ReadLine());
+            double len_mi = Convert.ToDouble(Console.ReadLine()); // double not int -- to input distance w decimals
             double km = len_mi * 1.609;
             km = Math.Round(km, 2);
 
@@ -38,31 +38,31 @@ namespace Program //package
             Console.WriteLine("=========================================");
 
             // Average Age Calculation
-            List<int> studentAgeList = new List<int>();
+            List<int> studentAgeList = new List<int>(); //for student age
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 10; i++) //declaration how many
             {
-                Console.Write($"Age of student {i}: ");
-                int age = Convert.ToInt32(Console.ReadLine());
-                studentAgeList.Add(age);
+                Console.Write($"Age of student {i}: "); //input of age -- i = #of student
+                int age = Convert.ToInt32(Console.ReadLine()); 
+                studentAgeList.Add(age); //adds input value
             }
 
-            Console.WriteLine(string.Join(", ", studentAgeList));
+            Console.WriteLine(string.Join(", ", studentAgeList)); //printing input
 
-            int studentAgeSum = 0;
+            int studentAgeSum = 0; //sum of all input
             foreach (int age in studentAgeList)
             {
                 studentAgeSum += age;
             }
 
-            double average = studentAgeSum / 10.0;
+            double average = studentAgeSum / 10.0; //average age
             string ave = average.ToString();
 
             Console.WriteLine("The average age of the student is: " + ave);
             Console.WriteLine("=========================================");
 
             // Story
-            string[] chNames = { "Lumaine", "Scara", "Raiden", "Barbatos", "Kaedehara" };
+            string[] chNames = { "Lumaine", "Scara", "Raiden", "Barbatos", "Kaedehara" }; // lines - values
             string[] worldNames = { "Teyvat", "Earth-918" };
             string[] weaponNames = { "Skyward", "Widsith", "The Catch" };
             string[] abilities = { "elemental resonance", "vision holder", "elemental reaction" };
@@ -79,7 +79,7 @@ namespace Program //package
             Console.WriteLine("=========================================");
             // Right triangle
             Console.WriteLine("Right Triangle Number Pyramid");
-            Console.Write("Enter a number: ");
+            Console.Write("Enter a number: "); //input
             int n = int.Parse(Console.ReadLine());
 
             // Check if input is valid
@@ -90,13 +90,13 @@ namespace Program //package
             else
             {
                 // Print the number pattern
-                for (int i = 1; i <= n; i++)
+                for (int i = 1; i <= n; i++) //increments columns
                 {
-                    for (int y = 1; y <= i; y++)
+                    for (int y = 1; y <= i; y++) //increments rows
                     {
                         Console.Write(y + " ");
                     }
-                    Console.WriteLine();
+                    Console.WriteLine(); //next line
                 }
             }
 
@@ -107,13 +107,13 @@ namespace Program //package
             Console.Write("Input: ");
             int input_num = Convert.ToInt32(Console.ReadLine());
             int sum = 0;
-            int[] formula_list = new int[input_num];
+            int[] formula_list = new int[input_num]; //input #s to compute
 
             // Formula
             int index = 0;
-            while (index < input_num)
+            while (index < input_num) 
             {
-                for (int i = 1; i <= input_num; i++)
+                for (int i = 1; i <= input_num; i++) //condition for input number
                 {
                     formula_list[index] = i;
                     index++;
@@ -123,33 +123,33 @@ namespace Program //package
                     }
                 }
             }
-            Console.WriteLine("Formula: " + string.Join("+", formula_list));
+            Console.WriteLine("Formula: " + string.Join("+", formula_list)); //joins input numbers with "+"
 
             // Summation
-            for (int i = 1; i <= input_num; i++)
+            for (int i = 1; i <= input_num; i++) 
             {
                 sum += i;
             }
-            Console.WriteLine("Summation: " + sum);
+            Console.WriteLine("Summation: " + sum); //print output
 
             Console.WriteLine("=========================================");
             // Inverse Triangle
             Console.WriteLine("Inverse Right Triangle Number Pyramid");
 
-            int num_i_tri = 0;
-            while (num_i_tri <= 0)
+            int num_i_tri = 0; 
+            while (num_i_tri <= 0) 
             {
-                Console.Write("Input: ");
+                Console.Write("Input: "); 
                 string input_it = Console.ReadLine();
-                if (int.TryParse(input_it, out int value_it))
+                if (int.TryParse(input_it, out int value_it))//convert str > int
                 {
-                    if (value_it <= 0)
+                    if (value_it <= 0) //invalid output
                     {
                         Console.WriteLine("Invalid input.");
                     }
                     else
                     {
-                        num_i_tri = value_it;
+                        num_i_tri = value_it; // breaks if e.g. 9=9
                         break;
                     }
                 }
@@ -158,9 +158,9 @@ namespace Program //package
                     Console.WriteLine("Invalid input.");
                 }
             }
-            for (int i = num_i_tri; i >= 1; i--)
+            for (int i = num_i_tri; i >= 1; i--) //starts at input number column, will decrement
             {
-                for (int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++) // increments rows
                 {
                     Console.Write(j + " ");
                 }
