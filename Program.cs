@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Program //package
+namespace Program
 {
     class Program
     {
